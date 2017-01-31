@@ -28,9 +28,9 @@ public class LinkedListSubtract {
 	ll.insertAtEnd(5);
 	ll.printLinkedList();
 	int head =1;
-	int a = ll.reverse(head);
+	/*int a = ll.reverse(head);
 	ll.printLinkedList();
-	ll.subtract(head);
+	ll.subtract(head);*/
 	ll.printLinkedList();
 
 	}

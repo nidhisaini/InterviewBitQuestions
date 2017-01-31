@@ -57,18 +57,18 @@ public class LinkedListTest {
 //		Write code to partition a linked list around a value x, such that all nodes 
 //		less than x come before all nodes greater than or equal to x. 
 //		
-		/*ll.partition(4);
+		ll.partition(7);
 		System.out.println("partitioned list :");
-		ll.printLinkedList();*/
+		ll.printLinkedList();
 	
 	
 	/*Node rs = ll.addNumbers(ll.first, ll2.first);
 	System.out.print("Resultant List is ");
 	ll.printLinkedList();*/
 		
-	   Node middle =	ll.isPalindrom(2);
+	  /* Node middle =	ll.isPalindrom(2);
 	   System.out.print("The middle is : "+ middle.data);
-	   ll.printLinkedList();
+	   ll.printLinkedList();*/
 	
 	}
 

@@ -7,7 +7,7 @@ public class setZeroMatrixArrList {
 		int[][] m  = new int[a.size()][a.size()];
 		for(int i=0; i< m.length;i++){
 			for(int j=0; j< m.length;j++){
-					m[i][j] = a.get(i);
+				/*	m[i][j] = a.get(i);*/
 			}
 		} 
 	}

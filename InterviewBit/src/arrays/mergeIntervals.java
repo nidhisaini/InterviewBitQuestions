@@ -1,4 +1,4 @@
-package stringsQuestions;
+package arrays;
 
 /*Merge Overlapping IntervalsBookmark Suggest Edit
 Given a collection of intervals, merge all overlapping intervals.
@@ -33,7 +33,7 @@ class Interval {
 		return start;
 	}
 
-	public int grtEnd() {
+	public int getEnd() {
 		return end;
 	}
 }
@@ -78,10 +78,10 @@ class mergeIntervals {
 	public static void main(String[] args) {
 		ArrayList<Interval> i = new ArrayList<Interval>();
 		
-		Interval i1 = new Interval(6, 9);
-		Interval i2 = new Interval(1, 3);	
+		Interval i1 = new Interval(1, 3);
+		Interval i2 = new Interval(2, 6);	
 		Interval i3 = new Interval(10, 16);
-		Interval i4 = new Interval(15, 18);
+		Interval i4 = new Interval(17, 18);
 
 		i.add(i1);
 		i.add(i2);

@@ -334,6 +334,7 @@ public class LinkedList {
     		 Node next = current.next;
     		 current.next = null;
     		 System.out.println(" The value of the current node is :" + current.data);
+    		 
     		 if(current.data < x){
     			 
     			 if(beforeStartRef == null){
@@ -359,6 +360,12 @@ public class LinkedList {
     		 }
     		 current = next;
     	 }//end of while loop
+    	 
+    	 
+    	// incase  Before list is empty
+    		if(beforeStartRef == null){
+    		    return beforeStartRef;
+    		}
     	 
     	 Node ret = afterStartRef;
     	      	 
@@ -484,6 +491,117 @@ public class LinkedList {
     	 }
     	 return res;
      }
+     
+     
+     
+    /* Partition ListBookmark Suggest Edit
+     Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
+
+     You should preserve the original relative order of the nodes in each of the two partitions.
+
+     For example,
+     Given 1->4->3->2->5->2 and x = 3,
+     return 1->2->2->4->3->5.*/
+     public Node partition(Node a, int b) {
+ 	    
+    	 Node curr = a;
+ 	     
+    	 Node BeforeSr = null;
+    	 Node BeforeE = null;
+    	 Node AfterSr = null;
+    	 Node AfterE = null;
+ 	    
+ 	    
+ 	    
+ 	    while(curr != null){
+ 	   
+ 	    	Node next = curr.next;
+ 	    curr.next = null;
+ 	    
+ 	    if(curr.data < b) { 
+ 	        
+ 	        if(BeforeSr == null){
+ 	            BeforeSr = curr;
+ 	            BeforeE = BeforeSr;
+ 	        }
+ 	        else{
+ 	            BeforeE.next = curr;
+ 	            BeforeE = curr;
+ 	        }
+ 	    }
+ 	    else{
+ 	        if(AfterSr == null){
+ 	            AfterSr = curr;
+ 	            AfterE = AfterSr;
+ 	        }
+ 	        else{
+ 	            AfterE.next = curr;
+ 	            AfterE = curr;
+ 	        }
+ 	    }
+ 	    curr = next;
+ 	}
+ 	
+ 	// incase  Before list is empty
+ 	if(BeforeSr == null){
+ 	    return AfterSr;
+ 	}
+ 	
+ 	//merge two lists
+ 	Node ref = AfterSr;
+     if(BeforeSr != null){
+         BeforeE.next = ref;
+         ref = BeforeSr;
+     }
+     
+     AfterE.next = null;
+     ref = a;
+     
+     return BeforeSr;
+ 	}
+     
+     
+/*List Cycle
+Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+
+Try solving it using constant additional space.
+
+Example :
+
+Input : 
+
+                  ______
+                 |     |
+                 \/    |
+        1 -> 2 -> 3 -> 4
+
+Return the node corresponding to node 3. */
+     
+	public Node detectCycle(Node a) {
+	    
+		Node s = a;
+		Node f = a;
+	    
+	    while(f != null && f.next != null){
+	          s = s.next;
+	          f = f.next.next;
+	          if(s == f )
+	              break;
+ 	    }
+ 	    
+ 	    if( f == null || f.next == null ){
+ 	        return null;
+ 	    }
+ 	    
+ 	    s = a;
+ 	    while( s != f ){
+ 	        s = s.next;
+ 	        f = f.next;
+ 	       
+ 	       
+ 	    }
+ 	   return f;
+	}
 
 	
      
