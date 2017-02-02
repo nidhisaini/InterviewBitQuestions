@@ -13,6 +13,8 @@ public class Colorful {
 
        while (temp < s.length()) {
            //if consecutive Integer is same return 0
+    	 
+
            if (set.contains(s.charAt(temp) - '0')) return 0;
            set.add(s.charAt(temp) - '0');
            temp++;
@@ -28,9 +30,13 @@ public class Colorful {
        while (j < n) {
 
            val1 = s.charAt(i) - '0';
+         
+           
            val2 = s.charAt(j) - '0';
-
+           
+           
            if (set.contains(val1*val2))
+        	   
                return 0;
 
            set.add(val1 * val2);
@@ -42,7 +48,7 @@ public class Colorful {
        }
 
 	public static void main(String[] args) {
-		int a = 23;
+		int a = 236;
 		int r = colorful(a);
 		System.out.println("The string is colorful "+ r);
 

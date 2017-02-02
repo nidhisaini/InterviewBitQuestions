@@ -419,13 +419,13 @@ public class LinkedList {
      For example,
      Given 1->1->2, return 1->2.
      Given 1->1->2->3->3, return 1->2->3.*/
- 	public Node deleteDuplicates(Node head) {
+ 	public Node deleteDuplicates() {
  	   
- 	   if(head == null || head.next == null)
-             return head;
+ 	   if(first == null || first.next == null)
+             return first;
   
- 	  Node prev = head;    
- 	 Node p = head.next;
+ 	  Node prev = first;    
+ 	  Node p = first.next;
   
          while(p != null){
              if(p.data == prev.data){
@@ -438,7 +438,7 @@ public class LinkedList {
              }
          }
   
-         return head;
+         return first;
  	}
      
      

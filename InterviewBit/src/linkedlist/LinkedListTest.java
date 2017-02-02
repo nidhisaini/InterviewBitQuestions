@@ -9,23 +9,24 @@ public class LinkedListTest {
 		LinkedList ll = new LinkedList();
 				
 		ll.printLinkedList();
-		ll.insertAtBeginning(2);	
+		ll.insertAtBeginning(1);
+		ll.insertAtBeginning(1);
 		ll.printLinkedList();
-		ll.insertAtEnd(7);	
 		ll.printLinkedList();
-		ll.insertAtEnd(6);
-		ll.insertAtEnd(9);
-		ll.insertAtEnd(4);
-		/*ll.insertAtEnd(3);
-		ll.insertAtEnd(0);*/
 		ll.printLinkedList();
-			
+		ll.insertAtEnd(2);
+		ll.insertAtEnd(3);
+		ll.insertAtEnd(3);
+		ll.printLinkedList();
+		
 		
 		/*ll.insertAt("2",1);
 		System.out.println("Inserted 2");
 		ll.printLinkedList();*/
 		
-		
+		System.out.println("Now remove duplicates from unsorted LinkedList :");
+		ll.deleteDuplicates();
+		ll.printLinkedList();
 		
 		/*System.out.println("Now remove duplicates from unsorted LinkedList :");
 		ll.removeDuplicatesFromUnsortedLL();
@@ -57,9 +58,9 @@ public class LinkedListTest {
 //		Write code to partition a linked list around a value x, such that all nodes 
 //		less than x come before all nodes greater than or equal to x. 
 //		
-		ll.partition(7);
+		/*ll.partition(7);
 		System.out.println("partitioned list :");
-		ll.printLinkedList();
+		ll.printLinkedList();*/
 	
 	
 	/*Node rs = ll.addNumbers(ll.first, ll2.first);

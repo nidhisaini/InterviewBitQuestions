@@ -23,8 +23,10 @@ public class GroupAnagrams1 {
               l.add(i+1);
               map.put(t, l);
           }
-          else
+          else{
+        	 // System.out.print(map.get(t).add(i + 1));
               map.get(t).add(i + 1);
+          }
       }
       
       for(ArrayList<Integer> l : map.values()){
