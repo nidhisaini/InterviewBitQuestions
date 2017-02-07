@@ -133,9 +133,61 @@ public class BST {
     }
 }
 	
+/*	Max Depth of Binary 
+	Given a binary tree, find its maximum depth.
+
+	The maximum depth of a binary tree is the number of nodes along the longest path from the root node down to the farthest leaf node.
+
+	 NOTE : The path has to end on a leaf node. 
+	Example :
+
+	         1
+	        /
+	       2
+	max depth = 2.*/
+	public int maxDepth(Node a) {
+	    if(a == null)
+	       return 0;
+	       
+	    int leftDepth = maxDepth(a.leftChild);  
+	    int rightDepth = maxDepth(a.rightChild);
+	    
+	    int max_depth = Math.max(leftDepth,rightDepth);
+	    return max_depth +1;
+	}
 	
-	
-	
-	
+
+/*	Invert the Binary Tree
+	Given a binary tree, invert the binary tree and return it. 
+	Look at the example for more details.
+
+	Example : 
+	Given binary tree
+
+	     1
+	   /   \
+	  2     3
+	 / \   / \
+	4   5 6   7
+	invert and return
+
+	     1
+	   /   \
+	  3     2
+	 / \   / \
+	7   6 5   4*/
+	public Node invertTree(Node root) {
+        
+        if(root == null)
+          return null;
+        
+        Node left =  invertTree(root.leftChild);   
+        Node right =  invertTree(root.rightChild);
+       
+        root.leftChild = right;
+        root.rightChild = left;
+        return root;
+    }
+
 
 }
