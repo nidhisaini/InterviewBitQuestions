@@ -2,31 +2,34 @@ package bitManipulation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 public class singleNumber {
 
 	public static int singleNumber2(final List<Integer> a) {
-	    int r=0; 
-	    HashMap<Integer, Integer> hm = new  HashMap<Integer, Integer>();
-	    for(int i=0; i<a.size();i++){
-	        if(!hm.containsKey(a.get(i))){
-	            hm.put(a.get(i), 1);
-	        }
-	        else{
-	             int val = hm.get(i);
-	             hm.put(a.get(i), val);
-	            }
-	         }
+	  
+	   
+	    	HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
+	        int num = 0;
 	         
-	         for(Map.Entry<Integer, Integer>  m: hm.entrySet()){
-	                int v = m.getValue();
-	             if(v<3)
-	               r = m.getKey(); 
-	             
-	         }
-	   return r;      
+	        for (int i = 0; i < a.size(); i++) {
+	            if (!hashMap.containsKey(a.get(i))) {
+	                hashMap.put(a.get(i), 1);
+	            } else if (hashMap.get(a.get(i)) == 1) {
+	                hashMap.put(a.get(i), 2);
+	            } else if (hashMap.get(a.get(i)) == 2) {
+	                hashMap.remove(a.get(i));
+	            }
+	        }
+	        Set<Integer> set = new HashSet<Integer>();
+	        set = hashMap.keySet();
+	         
+	        for (Integer n : set) {
+	            num = n;
+	        }
+	        return num;    
 	}
 	
 	public static void main(String[] args) {
